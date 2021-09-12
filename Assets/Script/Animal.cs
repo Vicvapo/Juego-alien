@@ -8,15 +8,20 @@ public class Animal : MonoBehaviour
     [SerializeField] bool movingRight;
     [SerializeField] GameManager gm;
     [SerializeField] int lifepoints;
-    int Contador = 3;
+    bool cont = true;
+    int Contador = 1;
+    int Reserva2;
     int Reserva;
-    float tiempo = 5f;
+    float tiempo = 0;
+    float Limitime = 5;
+
    
     float minX, maxX;
 
     // Start is called before the first frame update
     void Start()
     {
+        Reserva2 = Contador;
         Vector2 esquinaInfDer = Camera.main.ViewportToWorldPoint(new Vector2(1, 0));
         Vector2 esquinaInfIzq = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
 
@@ -28,21 +33,9 @@ public class Animal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tiempo -= Time.captureDeltaTime;
-        if(Contador>= 1)
+        if(cont==true)
         {
-            if(Input.GetKeyDown(KeyCode.X))
-            {
-                Time.timeScale = 0.5f;
-                lifepoints = 1;
-            }
-            if(tiempo <=0)
-            {
-                Time.timeScale = 1f;
-                Contador--;
-                tiempo = 5f;
-                lifepoints = Reserva;
-            }
+            power();
         }
       
         if(movingRight)
@@ -68,6 +61,27 @@ public class Animal : MonoBehaviour
         }
           
     }
+    void power()
+    {
+        if (Input.GetKeyDown(KeyCode.X) && Time.unscaledTime >= tiempo)
+        {
+            Time.timeScale = 0.5f;
+           lifepoints = 1;
+            tiempo = Time.unscaledTime + Limitime;
+            Reserva2 = Reserva2 + 1;
+        }
+        if (tiempo <= Time.unscaledTime)
+        {
+            Time.timeScale = 1f;
+            lifepoints = Reserva;
+            if (Reserva2 == 4)
+            {
+                cont = false;
+            }
+        }
+    }
+    
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject objeto = collision.gameObject;
