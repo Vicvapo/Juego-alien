@@ -582,3 +582,4 @@ Received Import Request.
   path: Assets/Scenes/nivel 3.unity
   artifactKey: Guid(f777e948c45a76748905c08f6a9390bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scenes/nivel 3.unity using Guid(f777e948c45a76748905c08f6a9390bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf1a80754c9a349dbc92124ddd9df394') in 0.009847 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
