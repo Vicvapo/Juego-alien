@@ -14,9 +14,10 @@ public class Animal : MonoBehaviour
     int Reserva;
     float tiempo = 0;
     float Limitime = 5;
+  
 
    
-    float minX, maxX;
+    float minX, maxX, maxY, minY;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +25,13 @@ public class Animal : MonoBehaviour
         Reserva2 = Contador;
         Vector2 esquinaInfDer = Camera.main.ViewportToWorldPoint(new Vector2(1, 0));
         Vector2 esquinaInfIzq = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
+        Vector2 esquinaSupDer = Camera.main.ViewportToWorldPoint(new Vector2(1, 0));
+        Vector2 esquinaSupIzq = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
 
         maxX = esquinaInfDer.x;
         minX = esquinaInfIzq.x;
+        maxY = esquinaSupDer.y;
+        minY = esquinaSupIzq.y;
         Reserva = lifepoints;
     }
 
@@ -37,6 +42,8 @@ public class Animal : MonoBehaviour
         {
             power();
         }
+      
+     
       
         if(movingRight)
         {
@@ -61,13 +68,15 @@ public class Animal : MonoBehaviour
         }
           
     }
-    void power()
+     private void power()
     {
         if (Input.GetKeyDown(KeyCode.X) && Time.unscaledTime >= tiempo)
         {
             Time.timeScale = 0.5f;
-           lifepoints = 1;
+           //lifepoints = 1;
             tiempo = Time.unscaledTime + Limitime;
+            Reserva = lifepoints;
+            lifepoints = 1;
             Reserva2 = Reserva2 + 1;
         }
         if (tiempo <= Time.unscaledTime)

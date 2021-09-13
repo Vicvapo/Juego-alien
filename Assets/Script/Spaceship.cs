@@ -9,9 +9,6 @@ public class Spaceship : MonoBehaviour
     [SerializeField] GameObject disparador;
     [SerializeField] float fireRate;
     [SerializeField] GameObject rafaga;
-        
-
-
 
     float minX, maxX, minY, maxY;
     float nextFire = 0;
@@ -37,7 +34,7 @@ public class Spaceship : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         movernave();
         if (cambiarBala)
             disparar();
@@ -45,6 +42,7 @@ public class Spaceship : MonoBehaviour
             disparoRafaga();
         if (Input.GetKeyDown(KeyCode.Z))
             cambiarBala = cambiarBala ? false : true;
+
     }
     void disparoRafaga()
     {

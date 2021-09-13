@@ -1256,6 +1256,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2344554616015838431, guid: d0a800b3a7729614d957a00f8eb618bd, type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344554616015838431, guid: d0a800b3a7729614d957a00f8eb618bd, type: 3}
       propertyPath: lifepoints
       value: 1
       objectReference: {fileID: 0}
@@ -1692,6 +1696,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 910804055340493404}
+    - target: {fileID: 6195438060684507307, guid: 623d494886bae134d9bc860c43dd4c51, type: 3}
+      propertyPath: PauseMenu
+      value: 
+      objectReference: {fileID: 2019547557}
     - target: {fileID: 6195438060684507307, guid: 623d494886bae134d9bc860c43dd4c51, type: 3}
       propertyPath: pauseMenu
       value: 
@@ -2174,7 +2182,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2010382371}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: SiguienteNivel
+        m_MethodName: NextLevelTwo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2382,7 +2390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2019547558
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2586,7 +2594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2119812874
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2741,6 +2749,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 910804054565016208, guid: 2a399ba65b96bfd489a0b4f527ff7aa2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 910804054565016210, guid: 2a399ba65b96bfd489a0b4f527ff7aa2, type: 3}
+      propertyPath: gamePaused
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 910804054565016211, guid: 2a399ba65b96bfd489a0b4f527ff7aa2, type: 3}

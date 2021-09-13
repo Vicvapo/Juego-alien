@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.P) && gameOver==false)
         PauseGame();
        
+
     }
     public void StarGame()
     {
@@ -46,15 +47,24 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
     void PauseGame()
-  
+
     {
-        gamePaused = gamePaused ? false : true;
-        player.gamePaused = gamePaused;
-        pauseMenu.SetActive(gamePaused);
-        Time.timeScale = gamePaused ? 0 : 1;
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (Time.timeScale == 1)
+            {
+                Time.timeScale = 0;
+                pauseMenu.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1;
+                pauseMenu.SetActive(false);
+            }
+        }
     }
 
-        public void numeroanimales()
+    public void numeroanimales()
     {
         numAnimales--;
         if(numAnimales<1)
